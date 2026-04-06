@@ -1,6 +1,7 @@
 import { supabase } from "@/lib/supabase";
 import { Project, Scenario } from "@/lib/types";
 import { ScenarioCard } from "@/components/scenario-card";
+import { ScenarioForm } from "@/components/scenario-form";
 
 export default async function ProjectPage({
   params,
@@ -25,8 +26,11 @@ export default async function ProjectPage({
 
   return (
     <div className="flex flex-col flex-1">
-      <h1 className="text-2xl font-bold mb-8">{project.name}</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="flex items-center justify-between mb-8">
+        <h1 className="text-2xl font-bold">{project.name}</h1>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {scenarios?.map((scenario) => (
           <ScenarioCard
             key={scenario.id}
@@ -34,6 +38,11 @@ export default async function ProjectPage({
             project={project as Project}
           />
         ))}
+      </div>
+
+      <div className="max-w-2xl">
+        <h2 className="text-xl font-semibold mb-4">Create New Scenario</h2>
+        <ScenarioForm projectId={params.id} />
       </div>
     </div>
   );
