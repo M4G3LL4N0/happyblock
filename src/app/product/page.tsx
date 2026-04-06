@@ -2,23 +2,55 @@ const modules = [
   {
     title: "Scenario Builder",
     description:
-      "Create and compare redevelopment, corridor, and block-level strategies across density, access, green space, and public realm outcomes.",
+      "Create and compare multiple spatial strategies for any block, corridor, or district. Test variations in density, land use, green space, and public realm design.",
+    icon: "📊",
+    features: [
+      "Block-level planning",
+      "Corridor optimization",
+      "Mixed-use scenarios",
+      "Public realm modeling",
+      "Comparative analysis"
+    ]
   },
   {
     title: "HappyScore Engine",
     description:
-      "Measure livability through a structured scoring system spanning access, walkability, safety, green comfort, time efficiency, and long-term vitality.",
+      "Measure livability through a structured scoring system that evaluates access, walkability, safety, green comfort, and neighborhood vitality.",
+    icon: "🏆",
+    features: [
+      "Human-centered metrics",
+      "Scenario comparison",
+      "Tradeoff visualization",
+      "Long-term outlook",
+      "Customizable weights"
+    ]
   },
   {
     title: "Tradeoff Intelligence",
     description:
-      "Reveal what improves, what degrades, and what shifts when a project changes housing mix, parking ratios, retail allocation, or public space design.",
+      "Understand the impacts of planning decisions through clear visualizations of tradeoffs across density, access, green space, and economic viability.",
+    icon: "⚖️",
+    features: [
+      "Impact analysis",
+      "Risk assessment",
+      "Optimization paths",
+      "Stakeholder alignment",
+      "Decision support"
+    ]
   },
   {
     title: "Planning Recommendations",
     description:
-      "Generate structured AI-backed suggestions for how to improve a block, corridor, or development concept based on stated goals and scenario outcomes.",
-  },
+      "Get AI-backed suggestions for improving block designs, corridor layouts, and neighborhood plans based on your goals and constraints.",
+    icon: "🤖",
+    features: [
+      "Actionable insights",
+      "Optimization paths",
+      "Risk mitigation",
+      "Best practices",
+      "Scenario generation"
+    ]
+  }
 ];
 
 const useCases = [
@@ -67,44 +99,59 @@ export default function ProductPage() {
         <section className="mt-14 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="rounded-3xl border border-neutral-800 bg-neutral-950/70 p-8">
             <p className="text-xs uppercase tracking-[0.28em] text-neutral-500">
-              Product workflow
+              Product Workflow
             </p>
             <div className="mt-6 space-y-5">
               <div className="rounded-2xl border border-neutral-800 bg-black/40 p-5">
-                <div className="text-sm font-medium text-white">
-                  1. Define the project
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center">
+                    1
+                  </div>
+                  <h3 className="text-sm font-medium text-white">
+                    Define the Project
+                  </h3>
                 </div>
                 <p className="mt-2 text-sm leading-7 text-neutral-400">
-                  Input the site, corridor, or district context along with goals
-                  such as housing, access, family usability, public realm
-                  quality, or economic vitality.
+                  Input site context, planning goals, and constraints. Set priorities for housing, access, green space, and economic vitality.
                 </p>
               </div>
               <div className="rounded-2xl border border-neutral-800 bg-black/40 p-5">
-                <div className="text-sm font-medium text-white">
-                  2. Generate scenarios
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center">
+                    2
+                  </div>
+                  <h3 className="text-sm font-medium text-white">
+                    Generate Scenarios
+                  </h3>
                 </div>
                 <p className="mt-2 text-sm leading-7 text-neutral-400">
-                  Compare baseline, optimized, green-heavy, density-heavy, or
-                  mixed-use strategies in one structured workspace.
+                  Create and compare multiple spatial strategies - from baseline to optimized, green-forward to density-maximized concepts.
                 </p>
               </div>
               <div className="rounded-2xl border border-neutral-800 bg-black/40 p-5">
-                <div className="text-sm font-medium text-white">
-                  3. Evaluate tradeoffs
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center">
+                    3
+                  </div>
+                  <h3 className="text-sm font-medium text-white">
+                    Evaluate Tradeoffs
+                  </h3>
                 </div>
                 <p className="mt-2 text-sm leading-7 text-neutral-400">
-                  Review score changes, planning tradeoffs, and recommendation
-                  panels to understand what each scenario improves or sacrifices.
+                  Review score changes, planning impacts, and recommendation panels to understand what each scenario improves or sacrifices.
                 </p>
               </div>
               <div className="rounded-2xl border border-neutral-800 bg-black/40 p-5">
-                <div className="text-sm font-medium text-white">
-                  4. Share a stronger plan
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center">
+                    4
+                  </div>
+                  <h3 className="text-sm font-medium text-white">
+                    Share a Stronger Plan
+                  </h3>
                 </div>
                 <p className="mt-2 text-sm leading-7 text-neutral-400">
-                  Turn scenario outputs into clearer decisions for internal
-                  teams, public-private partners, or stakeholder review.
+                  Turn scenario outputs into clearer decisions for internal teams, public-private partners, and stakeholder review.
                 </p>
               </div>
             </div>
@@ -129,17 +176,22 @@ export default function ProductPage() {
 
         <section className="mt-14 rounded-3xl border border-neutral-800 bg-gradient-to-br from-neutral-950 to-neutral-900 p-8">
           <p className="text-xs uppercase tracking-[0.28em] text-neutral-500">
-            Core thesis
+            Core Thesis
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight">
-            The future of planning is measurable, visual, and human centered.
+            The Future of Planning is Measurable, Visual, and Human-Centered
           </h2>
-          <p className="mt-5 max-w-4xl text-sm leading-7 text-neutral-300">
-            HappyBlock is built around a simple idea: better places come from
-            better spatial decisions. The product transforms abstract planning
-            conversations into structured scenarios with visible outcomes and
-            clearer tradeoffs.
-          </p>
+          <div className="mt-5 max-w-4xl text-sm leading-7 text-neutral-300 space-y-4">
+            <p>
+              HappyBlock transforms abstract planning conversations into structured scenarios with visible outcomes and clearer tradeoffs. We believe better places come from better spatial decisions.
+            </p>
+            <p>
+              Our platform helps planning teams, developers, and urban operators test scenarios, compare tradeoffs, and design places that improve livability, access, and long-term value.
+            </p>
+            <p>
+              By making planning decisions more measurable and visual, we're creating a new standard for urban intelligence that balances human experience with economic viability.
+            </p>
+          </div>
         </section>
       </div>
     </main>
