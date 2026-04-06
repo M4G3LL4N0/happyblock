@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HappyBlock - AI-Powered Urban Planning",
-  description: "Designing neighborhoods people actually want to live in. Optimizing blocks for happiness, access, and real-life experience.",
+  title: "HappyBlock - Urban Intelligence Platform",
+  description: "The operating system for human-centered urban design. Optimizing cities for happiness, access, and real-life experience.",
 };
 
 export default function RootLayout({
@@ -25,9 +25,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased bg-black`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-black text-zinc-50">{children}</body>
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <div className="flex flex-col flex-1">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
