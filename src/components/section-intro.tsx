@@ -1,8 +1,10 @@
+import clsx from "clsx";
+
 export function SectionIntro({
   eyebrow,
   title,
   description,
-  centered = true,
+  centered = false,
   className,
 }: {
   eyebrow?: string;
@@ -12,26 +14,30 @@ export function SectionIntro({
   className?: string;
 }) {
   return (
-    <div className={clsx(
-      centered ? "mx-auto text-center" : "text-left",
-      "max-w-3xl",
-      className
-    )}>
-      {eyebrow && (
-        <p className="text-sm font-medium tracking-[0.2em] text-blue-400/80 uppercase mb-4">
+    <div
+      className={clsx(
+        centered ? "mx-auto text-center" : "text-left",
+        "max-w-3xl",
+        className
+      )}
+    >
+      {eyebrow ? (
+        <p className="text-xs uppercase tracking-[0.32em] text-neutral-500">
           {eyebrow}
         </p>
-      )}
-      {title && (
-        <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+      ) : null}
+
+      {title ? (
+        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
           {title}
         </h2>
-      )}
-      {description && (
-        <p className="mt-4 text-lg leading-8 text-neutral-300">
+      ) : null}
+
+      {description ? (
+        <p className="mt-4 text-base leading-7 text-neutral-400 sm:text-lg">
           {description}
         </p>
-      )}
+      ) : null}
     </div>
   );
 }
