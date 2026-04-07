@@ -11,6 +11,7 @@ export function SectionWrapper({
   introClassName,
   innerClassName,
   container = true,
+  variant = "default",
 }: {
   children: ReactNode;
   className?: string;
@@ -20,17 +21,28 @@ export function SectionWrapper({
   introClassName?: string;
   innerClassName?: string;
   container?: boolean;
+  variant?: "default" | "highlight" | "subtle";
 }) {
+  const variants = {
+    default: clsx(
+      "relative py-40 sm:py-52",
+      "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-indigo-950/80 before:via-neutral-950/90 before:to-neutral-950/95",
+      "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.95)_0%,_rgba(0,0,0,0)_100%)]"
+    ),
+    highlight: clsx(
+      "relative py-40 sm:py-52",
+      "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-indigo-950/80 before:via-violet-950/90 before:to-fuchsia-950/95",
+      "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.95)_0%,_rgba(0,0,0,0)_100%)]"
+    ),
+    subtle: clsx(
+      "relative py-40 sm:py-52",
+      "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-neutral-950/80 before:via-neutral-950/90 before:to-neutral-950/95",
+      "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.95)_0%,_rgba(0,0,0,0)_100%)]"
+    ),
+  };
+
   return (
-    <section 
-      className={clsx(
-        "relative py-40 sm:py-52",
-        "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-blue-900/25 before:via-neutral-950/90 before:to-neutral-950/95",
-        "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.95)_0%,_rgba(0,0,0,0)_100%)]",
-        "hover:before:opacity-95 hover:after:opacity-95 transition-all duration-500",
-        className
-      )}
-    >
+    <section className={clsx(variants[variant], className)}>
       {container ? (
         <div className={clsx("mx-auto max-w-7xl px-6", innerClassName)}>
           {(eyebrow || title || description) && (

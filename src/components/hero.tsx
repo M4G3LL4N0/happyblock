@@ -1,15 +1,15 @@
-import { Globe } from "lucide-react";
+import { Globe, Map, Building2, Train, ParkingSquare } from "lucide-react";
 import { Button } from "./ui/button";
-import { PremiumWrapper } from "./premium-wrapper";
+import { PremiumCard } from "./ui/cards/premium-card";
 
 export function Hero() {
   return (
     <section className="relative pt-32 pb-40 sm:pt-48 sm:pb-56 isolate overflow-hidden">
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/30 from-0% via-violet-900/80 via-30% to-fuchsia-950/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-950/80 from-0% via-violet-950/90 via-30% to-fuchsia-950/95" />
         <div className="absolute inset-0 bg-[url('/public/window.svg')] bg-[size:1200px] bg-center opacity-[0.1]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/30 via-violet-900/95 to-fuchsia-950" />
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-4xl h-[400px] bg-indigo-700/30 blur-[140px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-indigo-950/80 via-violet-950/95 to-fuchsia-950" />
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-4xl h-[400px] bg-indigo-800/30 blur-[140px]" />
         <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-fuchsia-600/25 blur-[140px]" />
         <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-violet-600/25 blur-[140px]" />
         <div className="absolute inset-0 bg-[linear-gradient(120deg,_rgba(192,132,252,0.2)_0%,_rgba(192,132,252,0)_40%)]" />
@@ -18,7 +18,7 @@ export function Hero() {
 
       <div className="px-6 mx-auto max-w-7xl">
         <div className="relative mx-4 sm:mx-8">
-          <div className="relative py-20 sm:py-28 px-8 sm:px-12 overflow-hidden rounded-[40px] border border-white/5 bg-gradient-to-b from-blue-950/20 to-black backdrop-blur-2xl shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_0_40px_-10px_rgba(45,212,191,0.1)]">
+          <PremiumCard className="py-24 sm:py-32 px-8 sm:px-12">
             <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-blue-700/10 blur-[80px]" />
             <div className="absolute -left-20 -bottom-20 w-64 h-64 rounded-full bg-blue-700/10 blur-[80px]" />
             
@@ -45,7 +45,38 @@ export function Hero() {
                 </Button>
               </div>
             </div>
-          </div>
+
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+              <div className="flex items-center gap-3 p-4 rounded-2xl bg-neutral-900/50 backdrop-blur border border-white/5">
+                <Map className="w-5 h-5 text-blue-400" />
+                <div>
+                  <div className="text-sm font-medium text-white">Block Planning</div>
+                  <div className="text-xs text-neutral-400">Optimize land use</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-4 rounded-2xl bg-neutral-900/50 backdrop-blur border border-white/5">
+                <Building2 className="w-5 h-5 text-purple-400" />
+                <div>
+                  <div className="text-sm font-medium text-white">Mixed-Use</div>
+                  <div className="text-xs text-neutral-400">Balanced districts</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-4 rounded-2xl bg-neutral-900/50 backdrop-blur border border-white/5">
+                <Train className="w-5 h-5 text-green-400" />
+                <div>
+                  <div className="text-sm font-medium text-white">Transit Hubs</div>
+                  <div className="text-xs text-neutral-400">Connected corridors</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 p-4 rounded-2xl bg-neutral-900/50 backdrop-blur border border-white/5">
+                <ParkingSquare className="w-5 h-5 text-orange-400" />
+                <div>
+                  <div className="text-sm font-medium text-white">Conversions</div>
+                  <div className="text-xs text-neutral-400">Repurpose spaces</div>
+                </div>
+              </div>
+            </div>
+          </PremiumCard>
         </div>
       </div>
     </section>
