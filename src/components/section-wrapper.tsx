@@ -2,6 +2,18 @@ import { ReactNode } from "react";
 import clsx from "clsx";
 import { SectionIntro } from "@/components/section-intro";
 
+interface SectionWrapperProps {
+  children: ReactNode;
+  className?: string;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  introClassName?: string;
+  innerClassName?: string;
+  container?: boolean;
+  variant?: "default" | "highlight" | "subtle";
+}
+
 export function SectionWrapper({
   children,
   className,
@@ -12,17 +24,7 @@ export function SectionWrapper({
   innerClassName,
   container = true,
   variant = "default",
-}: {
-  children: ReactNode;
-  className?: string;
-  eyebrow?: string;
-  title?: string;
-  description?: string;
-  introClassName?: string;
-  innerClassName?: string;
-  container?: boolean;
-  variant?: "default" | "highlight" | "subtle";
-}) {
+}: SectionWrapperProps) {
   const variants = {
     default: [
       "relative py-24 md:py-32 lg:py-40",

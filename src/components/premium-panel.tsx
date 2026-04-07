@@ -8,7 +8,7 @@ interface PremiumPanelProps {
 }
   return (
     <div
-      className={clsx(
+      className={cn(
         "relative isolate overflow-hidden rounded-[40px] p-px",
         "bg-gradient-to-br from-blue-500/20 via-blue-600/10 to-blue-800/5",
         "shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_0_40px_-10px_rgba(45,212,191,0.1)]",

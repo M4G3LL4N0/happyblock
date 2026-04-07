@@ -3,12 +3,12 @@ import clsx from "clsx";
 
 type CardVariant = "default" | "secondary" | "glass" | "gradient" | "ghost" | "premium" | "featured";
 
-type CardProps = {
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
-  className?: string;
   variant?: CardVariant;
   innerClassName?: string;
-};
+  glowPosition?: "top" | "center" | "bottom";
+}
 
 const variantClasses: Record<CardVariant, string> = {
   default: "border-white/10 bg-white/5",

@@ -1,18 +1,22 @@
 import clsx from "clsx";
 
+interface SectionIntroProps {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  centered?: boolean;
+  className?: string;
+  children?: ReactNode;
+}
+
 export function SectionIntro({
   eyebrow,
   title,
   description,
   centered = false,
   className,
-}: {
-  eyebrow?: string;
-  title?: string;
-  description?: string;
-  centered?: boolean;
-  className?: string;
-}) {
+  children,
+}: SectionIntroProps) {
   return (
     <div
       className={clsx(

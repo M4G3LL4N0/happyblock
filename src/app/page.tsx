@@ -26,16 +26,17 @@ export default function Home() {
         </PremiumPanel>
       </SectionWrapper>
 
-      <SectionWrapper className="bg-neutral-950/50">
-        <div className="space-y-12">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">How It Works</h2>
-            <p className="text-neutral-400 text-lg">
-              Our four-step process for smarter urban planning decisions
-            </p>
+      <SectionWrapper variant="highlight">
+        <PremiumPanel className="p-10 sm:p-14" glowPosition="center">
+          <div className="space-y-16">
+            <SectionIntro
+              title="How It Works"
+              description="Our four-step process for smarter urban planning decisions"
+              centered
+            />
+            <HowItWorks />
           </div>
-          <HowItWorks />
-        </div>
+        </PremiumPanel>
       </SectionWrapper>
 
       <SectionWrapper>

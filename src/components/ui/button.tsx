@@ -4,11 +4,12 @@ import clsx from "clsx";
 type ButtonVariant = "default" | "secondary" | "ghost" | "premium" | "link";
 type ButtonSize = "sm" | "md" | "lg" | "xl" | "icon";
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   isLoading?: boolean;
-};
+  loadingText?: string;
+}
 
 const variantClasses: Record<ButtonVariant, string> = {
   default: "bg-white text-black hover:bg-neutral-100 shadow-[0_0_20px_-5px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.5)] transition-all duration-300",
