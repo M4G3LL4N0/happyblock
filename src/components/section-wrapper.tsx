@@ -24,7 +24,8 @@ export function SectionWrapper({
   return (
     <section 
       className={clsx(
-        "relative py-24 sm:py-32",
+        "relative py-28 sm:py-36",
+        "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-neutral-900/20 before:via-transparent before:to-transparent",
         className
       )}
     >
