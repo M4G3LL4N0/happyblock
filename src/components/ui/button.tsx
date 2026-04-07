@@ -1,12 +1,13 @@
 import { ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "premium";
 type ButtonSize = "sm" | "md" | "lg" | "xl";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant;
   size?: ButtonSize;
+  isLoading?: boolean;
 };
 
 const variantClasses: Record<ButtonVariant, string> = {
@@ -15,6 +16,8 @@ const variantClasses: Record<ButtonVariant, string> = {
     "bg-gradient-to-br from-violet-600 to-fuchsia-600 text-white border border-violet-500/30 hover:from-violet-700 hover:to-fuchsia-700 shadow-[0_0_20px_-10px_rgba(192,132,252,0.4)] hover:shadow-[0_0_30px_-10px_rgba(192,132,252,0.5)] transition-all duration-300",
   ghost:
     "bg-transparent text-white border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all duration-300",
+  premium:
+    "bg-gradient-to-br from-blue-600 to-cyan-500 text-white border border-blue-500/30 hover:from-blue-700 hover:to-cyan-600 shadow-[0_0_20px_-10px_rgba(56,189,248,0.4)] hover:shadow-[0_0_30px_-10px_rgba(56,189,248,0.5)] transition-all duration-300",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
@@ -41,6 +44,15 @@ export function Button({
         className
       )}
       {...props}
-    />
+    >
+      {isLoading ? (
+        <div className="flex items-center gap-2">
+          <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+          {props.children}
+        </div>
+      ) : (
+        props.children
+      )}
+    </button>
   );
 }

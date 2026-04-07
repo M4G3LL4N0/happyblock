@@ -59,31 +59,41 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <UseCaseCard
-              icon={<LayoutGrid className="w-6 h-6" />}
-              title="Downtown Revitalization"
-              description="Transform underutilized urban cores into vibrant mixed-use districts"
-            />
-            <UseCaseCard
-              icon={<Map className="w-6 h-6" />}
-              title="Transit Corridors"
-              description="Optimize transit-oriented development for better connectivity"
-            />
-            <UseCaseCard
-              icon={<Building2 className="w-6 h-6" />}
-              title="Mixed-Use Planning"
-              description="Create balanced neighborhoods with diverse land uses"
-            />
-            <UseCaseCard
-              icon={<Train className="w-6 h-6" />}
-              title="Station Area Planning"
-              description="Maximize the potential of transit hubs"
-            />
-            <UseCaseCard
-              icon={<ParkingSquare className="w-6 h-6" />}
-              title="Parking Lot Conversion"
-              description="Repurpose underutilized spaces for community benefit"
-            />
+            <Card variant="premium" className="p-6 hover:shadow-xl">
+              <UseCaseCard
+                icon={<LayoutGrid className="w-6 h-6" />}
+                title="Downtown Revitalization"
+                description="Transform underutilized urban cores into vibrant mixed-use districts"
+              />
+            </Card>
+            <Card variant="premium" className="p-6 hover:shadow-xl">
+              <UseCaseCard
+                icon={<Map className="w-6 h-6" />}
+                title="Transit Corridors"
+                description="Optimize transit-oriented development for better connectivity"
+              />
+            </Card>
+            <Card variant="premium" className="p-6 hover:shadow-xl">
+              <UseCaseCard
+                icon={<Building2 className="w-6 h-6" />}
+                title="Mixed-Use Planning"
+                description="Create balanced neighborhoods with diverse land uses"
+              />
+            </Card>
+            <Card variant="premium" className="p-6 hover:shadow-xl">
+              <UseCaseCard
+                icon={<Train className="w-6 h-6" />}
+                title="Station Area Planning"
+                description="Maximize the potential of transit hubs"
+              />
+            </Card>
+            <Card variant="premium" className="p-6 hover:shadow-xl">
+              <UseCaseCard
+                icon={<ParkingSquare className="w-6 h-6" />}
+                title="Parking Lot Conversion"
+                description="Repurpose underutilized spaces for community benefit"
+              />
+            </Card>
           </div>
         </div>
       </SectionWrapper>
