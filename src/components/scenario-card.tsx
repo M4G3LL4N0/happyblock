@@ -53,29 +53,31 @@ export function ScenarioCard({
   ];
 
   return (
-    <Card className="rounded-3xl border border-neutral-800 bg-neutral-950/70 p-6">
+    <Card variant="secondary" className="p-6 group">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <div className="text-xs uppercase tracking-[0.24em] text-neutral-500">
+          <div className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 bg-neutral-900/40 rounded-full inline-flex px-3 py-1.5 mb-3">
             {(scenario as { scenario_type?: string }).scenario_type ?? "Scenario"}
           </div>
-          <h3 className="mt-2 text-2xl font-medium tracking-tight text-white">
+          <h3 className="text-2xl font-medium tracking-tight text-white">
             {scenario.name}
           </h3>
           {project?.name ? (
-            <p className="mt-2 text-sm text-neutral-400">{project.name}</p>
+            <p className="mt-1.5 text-sm text-neutral-400/80 font-medium">
+              {project.name}
+            </p>
           ) : null}
         </div>
 
         <Link
           href={`/dashboard/scenarios/${scenario.id}`}
-          className="rounded-xl border border-neutral-800 bg-black/40 px-3 py-2 text-sm text-neutral-200 transition hover:border-neutral-700 hover:bg-black/60"
+          className="rounded-xl border border-white/10 bg-white/5 px-3.5 py-2 text-sm text-white transition hover:border-white/20 hover:bg-white/10 group-hover:translate-x-1"
         >
-          View
+          View →
         </Link>
       </div>
 
-      <div className="mt-6 space-y-4">
+      <div className="mt-8 space-y-4">
         {scores.map((score) => (
           <div key={score.label}>
             <div className="mb-2 flex items-center justify-between text-sm">

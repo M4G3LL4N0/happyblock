@@ -47,8 +47,10 @@ function MiniBar({ value }: { value: number }) {
 export function ProductPreview() {
   return (
     <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-      <Card className="overflow-hidden rounded-[28px] border border-neutral-800 bg-neutral-950/80 p-0">
-        <div className="border-b border-neutral-800 px-6 py-4">
+      <Card className="overflow-hidden rounded-[28px] p-0">
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/30 via-transparent to-transparent" />
+          <div className="relative border-b border-white/5 px-6 py-4 backdrop-blur-[1px]">
           <div className="flex items-center justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.28em] text-neutral-500">
