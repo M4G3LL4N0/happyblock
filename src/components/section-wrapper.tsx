@@ -25,20 +25,22 @@ export function SectionWrapper({
 }) {
   const variants = {
     default: clsx(
-      "relative py-48 sm:py-64",
-      "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-indigo-950/90 before:via-neutral-950/95 before:to-neutral-950",
-      "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.95)_0%,_rgba(0,0,0,0)_100%)]",
-      "hover:before:opacity-95 hover:after:opacity-95 transition-all duration-500"
+      "relative py-28 sm:py-36",
+      "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]",
+      "before:from-blue-950/80 before:via-blue-950/90 before:to-blue-950",
+      "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.8)_0%,_rgba(0,0,0,0)_100%)]"
     ),
     highlight: clsx(
-      "relative py-40 sm:py-52",
-      "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-indigo-950/80 before:via-violet-950/90 before:to-fuchsia-950/95",
-      "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.95)_0%,_rgba(0,0,0,0)_100%)]"
+      "relative py-32 sm:py-40",
+      "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]",
+      "before:from-violet-950/80 before:via-blue-950/90 before:to-indigo-950",
+      "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.8)_0%,_rgba(0,0,0,0)_100%)]"
     ),
     subtle: clsx(
-      "relative py-40 sm:py-52",
-      "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-neutral-950/80 before:via-neutral-950/90 before:to-neutral-950/95",
-      "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.95)_0%,_rgba(0,0,0,0)_100%)]"
+      "relative py-24 sm:py-32",
+      "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]",
+      "before:from-neutral-950/90 before:via-neutral-950/95 before:to-black",
+      "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.9)_0%,_rgba(0,0,0,0)_100%)]"
     ),
   };
 
