@@ -25,9 +25,10 @@ export function SectionWrapper({
 }) {
   const variants = {
     default: clsx(
-      "relative py-40 sm:py-52",
-      "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-indigo-950/80 before:via-neutral-950/90 before:to-neutral-950/95",
-      "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.95)_0%,_rgba(0,0,0,0)_100%)]"
+      "relative py-48 sm:py-64",
+      "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-indigo-950/90 before:via-neutral-950/95 before:to-neutral-950",
+      "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.95)_0%,_rgba(0,0,0,0)_100%)]",
+      "hover:before:opacity-95 hover:after:opacity-95 transition-all duration-500"
     ),
     highlight: clsx(
       "relative py-40 sm:py-52",
