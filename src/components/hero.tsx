@@ -6,12 +6,13 @@ export function Hero() {
   return (
     <section className="relative pt-32 pb-40 sm:pt-48 sm:pb-56 isolate overflow-hidden">
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 from-0% via-neutral-950/80 via-30% to-neutral-950 to-90%" />
-        <div className="absolute inset-0 bg-[url('/public/window.svg')] bg-[size:1200px] bg-center opacity-[0.03]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/15 via-neutral-950/90 to-neutral-950" />
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-4xl h-[400px] bg-blue-800/15 blur-[100px]" />
-        <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-blue-700/10 blur-[100px]" />
-        <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-blue-700/10 blur-[100px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 from-0% via-neutral-950/80 via-30% to-neutral-950 to-90%" />
+        <div className="absolute inset-0 bg-[url('/public/window.svg')] bg-[size:1200px] bg-center opacity-[0.05]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-neutral-950/90 to-neutral-950" />
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-4xl h-[400px] bg-blue-800/20 blur-[120px]" />
+        <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-blue-700/15 blur-[120px]" />
+        <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-blue-700/15 blur-[120px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,_rgba(56,_189,_248,_0.1)_0%,_rgba(56,_189,_248,_0)_40%)]" />
       </div>
 
       <div className="px-6 mx-auto max-w-7xl">
