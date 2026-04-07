@@ -17,11 +17,12 @@ const variantClasses: Record<CardVariant, string> = {
   gradient: "border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] backdrop-blur-sm",
   ghost: "border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.06),rgba(255,255,255,0.02)_42%,rgba(255,255,255,0.01)_100%)] backdrop-blur-sm",
   premium: [
-    "border-white/10 bg-gradient-to-b from-blue-950/20 to-black",
-    "shadow-[0_0_0_1px_rgba(255,255,255,0.05)]",
-    "hover:shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_0_30px_-10px_rgba(56,189,248,0.2)]",
-    "backdrop-blur-[80px]"
-  ],
+    "border-white/10 bg-gradient-to-b from-blue-950/30 via-blue-950/20 to-black/95",
+    "shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_0_40px_-10px_rgba(56,189,248,0.2)]",
+    "hover:shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_0_50px_-10px_rgba(56,189,248,0.3)]",
+    "backdrop-blur-[80px] transition-all duration-500 ease-[cubic-bezier(0.65,0,0.35,1)]",
+    "hover:scale-[1.015]"
+  ].join(" "),
   featured: [
     "border-blue-900/20 bg-gradient-to-br from-blue-950/40 via-black/90 to-indigo-950/60",
     "shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-10px_rgba(59,130,246,0.25)]",

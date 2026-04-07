@@ -36,8 +36,8 @@ export function SectionIntro({
           <span className={cn(
             "bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent",
             "transition-all duration-500 ease-[cubic-bezier(0.65,0,0.35,1)]",
-            "hover:from-blue-500 hover:to-cyan-500 hover:shadow-[0_0_40px_-10px_rgba(56,189,248,0.3)]",
-            "inline-block hover:scale-[1.015]"
+            "hover:from-blue-500 hover:to-cyan-500 hover:shadow-[0_0_50px_-10px_rgba(56,189,248,0.4)]",
+            "inline-block hover:scale-[1.015] hover:translate-y-[-1px]"
           )}>
             {title}
           </span>

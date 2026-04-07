@@ -54,12 +54,12 @@ export function Button({
       {isLoading ? (
         <span className="inline-flex items-center gap-2">
           <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-          <span className="opacity-80 transition-opacity">
+          <span className="opacity-80 transition-opacity duration-300">
             {loadingText || props.children}
           </span>
         </span>
       ) : (
-        <span className="relative z-10 transition-transform group-hover:translate-y-[-1px] hover:scale-105">
+        <span className="relative z-10 transition-transform duration-300 group-hover:translate-y-[-1px] hover:scale-105">
           {props.children}
         </span>
       )}
