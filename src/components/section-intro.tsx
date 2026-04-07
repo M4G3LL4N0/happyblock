@@ -29,7 +29,7 @@ export function SectionIntro({
 
       {title && (
         <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-          <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent">
             {title}
           </span>
         </h2>

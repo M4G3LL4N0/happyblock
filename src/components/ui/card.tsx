@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import clsx from "clsx";
 
-type CardVariant = "default" | "secondary" | "glass" | "gradient" | "ghost" | "premium";
+type CardVariant = "default" | "secondary" | "glass" | "gradient" | "ghost" | "premium" | "featured";
 
 type CardProps = {
   children: ReactNode;
@@ -16,12 +16,18 @@ const variantClasses: Record<CardVariant, string> = {
   glass: "border-white/10 bg-white/5 backdrop-blur-md",
   gradient: "border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] backdrop-blur-sm",
   ghost: "border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.06),rgba(255,255,255,0.02)_42%,rgba(255,255,255,0.01)_100%)] backdrop-blur-sm",
-  premium: clsx(
+  premium: [
     "border-white/10 bg-gradient-to-b from-blue-950/20 to-black",
     "shadow-[0_0_0_1px_rgba(255,255,255,0.05)]",
     "hover:shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_0_30px_-10px_rgba(56,189,248,0.2)]",
     "backdrop-blur-[80px]"
-  ),
+  ],
+  featured: [
+    "border-white/5 bg-gradient-to-br from-blue-950/30 via-black to-indigo-950/40",
+    "shadow-[0_0_40px_-15px_rgba(56,189,248,0.3)]",
+    "hover:shadow-[0_0_50px_-15px_rgba(56,189,248,0.4)]",
+    "backdrop-blur-[20px]"
+  ],
 };
 
 export function Card({

@@ -24,8 +24,8 @@ export function SectionWrapper({
   variant?: "default" | "highlight" | "subtle";
 }) {
   const variants = {
-    default: clsx(
-      "relative py-32 sm:py-40",
+    default: [
+      "relative py-24 md:py-32 lg:py-40",
       "before:absolute before:inset-0 before:-z-10",
       "before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]",
       "before:from-blue-950/80 before:via-blue-950/90 before:to-blue-950",

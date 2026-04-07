@@ -1,13 +1,11 @@
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
-export function PremiumPanel({
-  children,
-  className,
-}: {
+interface PremiumPanelProps {
   children: ReactNode;
   className?: string;
-}) {
+  glowPosition?: "top" | "center" | "bottom";
+}
   return (
     <div
       className={clsx(
@@ -23,8 +21,17 @@ export function PremiumPanel({
       <div className="absolute inset-0 -z-20 bg-[linear-gradient(120deg,_rgba(56,189,248,0.2)_0%,_rgba(56,189,248,0)_50%)]" />
       <div className="absolute inset-0 -z-30 bg-[url('/public/window.svg')] bg-[size:1200px] bg-center opacity-[0.03]" />
       
-      <div className="relative h-full w-full rounded-[40px] bg-gradient-to-b from-blue-950/20 to-black backdrop-blur-[80px]">
-      {children}
+      <div className="relative h-full w-full rounded-[40px] bg-gradient-to-b from-blue-950/20 to-black/90 backdrop-blur-[80px]">
+        {children}
+        <div 
+          className={cn(
+            "absolute -z-10 w-full h-48 blur-[100px] rounded-full bg-blue-600/40",
+            glowPosition === "top" && "top-0 left-0",
+            glowPosition === "center" && "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+            glowPosition === "bottom" && "bottom-0 right-0"
+          )}
+        />
+      </div>
     </div>
   );
 }
