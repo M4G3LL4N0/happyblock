@@ -38,9 +38,13 @@ export function SectionWrapper({
     ),
     highlight: clsx(
       "relative py-32 sm:py-40",
-      "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]",
-      "before:from-violet-950/80 before:via-blue-950/90 before:to-indigo-950",
-      "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.8)_0%,_rgba(0,0,0,0)_100%)]"
+      "before:absolute before:inset-0 before:-z-10",
+      "before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]",
+      "before:from-violet-950/70 before:via-blue-950/80 before:to-indigo-950/90",
+      "before:transition-all before:duration-700",
+      "after:absolute after:inset-0 after:-z-20",
+      "after:bg-[linear-gradient(180deg,_rgba(0,0,0,0.8)_0%,_rgba(0,0,0,0)_100%)]",
+      "hover:before:opacity-90 hover:before:blur-[1px]"
     ),
     subtle: clsx(
       "relative py-24 sm:py-32",

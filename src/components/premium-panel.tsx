@@ -23,9 +23,12 @@ interface PremiumPanelProps {
       <div className="absolute inset-0 -z-30 bg-[url('/public/window.svg')] bg-[size:1200px] bg-center opacity-[0.03]" />
       
       <div className={cn(
-        "relative h-full w-full rounded-[40px] bg-gradient-to-b from-blue-950/20 to-black/90 backdrop-blur-[80px]",
-        "transition-all duration-500 group-hover:from-blue-950/30 group-hover:to-black/80",
-        "hover:shadow-[0_0_40px_-15px_rgba(56,189,248,0.3)]",
+        "relative h-full w-full rounded-[40px] bg-gradient-to-b from-blue-950/25 via-blue-950/20 to-black opacity-[0.99]",
+        "backdrop-blur-[80px] transition-all duration-700",
+        "group-hover:from-blue-950/30 group-hover:to-black/85 group-hover:shadow-[0_0_50px_-15px_rgba(56,189,248,0.3)]",
+        "before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]",
+        "before:from-blue-900/20 before:to-transparent before:opacity-50 before:transition-opacity before:duration-500",
+        "group-hover:before:opacity-70",
         innerClassName
       )}>
         {children}

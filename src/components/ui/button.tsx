@@ -16,8 +16,14 @@ const variantClasses: Record<ButtonVariant, string> = {
   secondary: "bg-neutral-900 text-white border border-neutral-700 hover:bg-neutral-800 hover:border-neutral-600 transition-all duration-300",
   ghost:
     "bg-transparent text-white border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all duration-300",
-  premium:
-    "bg-gradient-to-br from-blue-600 to-cyan-500 text-white border border-blue-500/30 hover:from-blue-700 hover:to-cyan-600 shadow-[0_0_20px_-10px_rgba(56,189,248,0.4)] hover:shadow-[0_0_30px_-10px_rgba(56,189,248,0.5)] transition-all duration-300",
+  premium: [
+    "bg-gradient-to-br from-blue-600 to-cyan-500 text-white",
+    "border border-blue-400/30 hover:border-blue-400/50",
+    "shadow-[0_0_20px_-10px_rgba(56,189,248,0.4)] hover:shadow-[0_0_30px_-10px_rgba(56,189,248,0.6)]",
+    "transition-all duration-300 ease-[cubic-bezier(0.65,0,0.35,1)]",
+    "hover:from-blue-600/90 hover:to-cyan-500/90",
+    "active:scale-95"
+  ].join(" "),
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

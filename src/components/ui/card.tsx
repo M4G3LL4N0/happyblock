@@ -23,11 +23,12 @@ const variantClasses: Record<CardVariant, string> = {
     "backdrop-blur-[80px]"
   ],
   featured: [
-    "border-white/5 bg-gradient-to-br from-blue-950/30 via-black to-indigo-950/40",
-    "shadow-[0_0_40px_-15px_rgba(56,189,248,0.3)]",
-    "hover:shadow-[0_0_50px_-15px_rgba(56,189,248,0.4)]",
-    "backdrop-blur-[20px]"
-  ],
+    "border-blue-900/20 bg-gradient-to-br from-blue-950/40 via-black/90 to-indigo-950/60",
+    "shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_20px_40px_-10px_rgba(59,130,246,0.25)]",
+    "hover:shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_25px_50px_-10px_rgba(59,130,246,0.35)]",
+    "backdrop-blur-[20px] backdrop-saturate-150",
+    "transition-all duration-500 ease-out"
+  ].join(" "),
 };
 
 export function Card({
