@@ -32,8 +32,9 @@ export function SectionWrapper({
       "before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]",
       "before:from-blue-950/80 before:via-blue-950/90 before:to-blue-950",
       "hover:before:from-blue-950/90 hover:before:via-blue-950/95 hover:before:to-blue-950",
-      "after:absolute after:inset-0 after:-z-20",
-      "after:bg-[linear-gradient(180deg,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0)_100%)]"
+      "after:absolute after:inset-0 after:-z-20 after:transition-all after:duration-500",
+      "after:bg-[linear-gradient(180deg,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0)_100%)]",
+      "hover:after:opacity-90"
     ),
     highlight: clsx(
       "relative py-32 sm:py-40",

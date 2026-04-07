@@ -25,6 +25,7 @@ interface PremiumPanelProps {
       <div className={cn(
         "relative h-full w-full rounded-[40px] bg-gradient-to-b from-blue-950/20 to-black/90 backdrop-blur-[80px]",
         "transition-all duration-500 group-hover:from-blue-950/30 group-hover:to-black/80",
+        "hover:shadow-[0_0_40px_-15px_rgba(56,189,248,0.3)]",
         innerClassName
       )}>
         {children}

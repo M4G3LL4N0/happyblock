@@ -53,7 +53,7 @@ export function Button({
           </span>
         </span>
       ) : (
-        <span className="relative z-10 transition-transform group-hover:translate-y-[-1px]">
+        <span className="relative z-10 transition-transform group-hover:translate-y-[-1px] hover:scale-105">
           {props.children}
         </span>
       )}

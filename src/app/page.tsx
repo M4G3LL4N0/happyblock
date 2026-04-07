@@ -26,7 +26,7 @@ export default function Home() {
         </PremiumPanel>
       </SectionWrapper>
 
-      <SectionWrapper variant="highlight" className="group">
+      <SectionWrapper variant="highlight" className="group hover:scale-[1.005] transition-transform duration-500">
         <PremiumPanel className="p-10 sm:p-14 group-hover:glowPosition='center'" glowPosition="center">
           <div className="space-y-16">
             <SectionIntro
