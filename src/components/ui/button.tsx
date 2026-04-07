@@ -46,12 +46,15 @@ export function Button({
       {...props}
     >
       {isLoading ? (
-        <div className="flex items-center gap-2">
-          <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-          {props.children}
-        </div>
+        <span className="inline-flex items-center gap-2">
+          <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+          <span className="opacity-80">{props.children}</span>
+        </span>
       ) : (
-        props.children
+        <span className="relative z-10">{props.children}</span>
+      )}
+      {variant === 'premium' && !isLoading && (
+        <span className="absolute inset-0 rounded-xl bg-[linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_50%)]" />
       )}
     </button>
   );

@@ -11,18 +11,19 @@ export function PremiumPanel({
   return (
     <div
       className={clsx(
-        "relative isolate overflow-hidden rounded-[40px]",
-        "border border-white/5 bg-gradient-to-b from-blue-950/20 to-black",
+        "relative isolate overflow-hidden rounded-[40px] p-px",
+        "bg-gradient-to-br from-blue-500/20 via-blue-600/10 to-blue-800/5",
         "shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_0_40px_-10px_rgba(45,212,191,0.1)]",
         "hover:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_0_60px_-15px_rgba(45,212,191,0.2)]",
         "transition-all duration-500",
-        "before:absolute before:inset-0 before:-z-10 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]",
-        "before:from-blue-900/30 before:via-blue-950/40 before:to-blue-950/60",
-        "after:absolute after:inset-0 after:-z-20 after:bg-[linear-gradient(120deg,_rgba(56,189,248,0.2)_0%,_rgba(56,189,248,0)_50%)]",
         className
       )}
     >
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/30 via-blue-950/40 to-blue-950/60" />
+      <div className="absolute inset-0 -z-20 bg-[linear-gradient(120deg,_rgba(56,189,248,0.2)_0%,_rgba(56,189,248,0)_50%)]" />
       <div className="absolute inset-0 -z-30 bg-[url('/public/window.svg')] bg-[size:1200px] bg-center opacity-[0.03]" />
+      
+      <div className="relative h-full w-full rounded-[40px] bg-gradient-to-b from-blue-950/20 to-black backdrop-blur-[80px]">
       {children}
     </div>
   );

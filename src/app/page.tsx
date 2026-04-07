@@ -5,6 +5,7 @@ import { HowItWorks } from "@/components/how-it-works";
 import { ProductModules } from "@/components/product-modules";
 import { UseCaseCard } from "@/components/use-case-card";
 import { LayoutGrid, Map, Building2, Train, ParkingSquare } from "lucide-react";
+import { Card } from "@/components/ui/card";
 import { PremiumPanel } from "@/components/premium-panel";
 
 export default function Home() {
@@ -12,15 +13,14 @@ export default function Home() {
     <div className="flex flex-col flex-1">
       <Hero />
       
-      <SectionWrapper>
-        <PremiumPanel className="p-8 sm:p-12">
-          <div className="space-y-12">
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-4">Product Preview</h2>
-              <p className="text-neutral-400 text-lg">
-                See HappyBlock in action with real-world scenario analysis and optimization
-              </p>
-            </div>
+      <SectionWrapper variant="highlight">
+        <PremiumPanel className="p-10 sm:p-14">
+          <div className="space-y-16">
+            <SectionIntro
+              title="Product Preview"
+              description="See HappyBlock in action with real-world scenario analysis and optimization"
+              centered
+            />
             <ProductPreview />
           </div>
         </PremiumPanel>
