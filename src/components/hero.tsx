@@ -23,20 +23,20 @@ export function Hero() {
             <div className="absolute -left-20 -bottom-20 w-64 h-64 rounded-full bg-blue-700/10 blur-[80px]" />
             
             <div className="relative z-10 max-w-3xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium tracking-wide rounded-full bg-blue-900/30 backdrop-blur text-blue-200 border border-blue-800/50 mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium tracking-wide rounded-full bg-blue-900/30 backdrop-blur text-blue-200 border border-blue-800/50 mb-8 animate-fade-in">
                 <Globe className="w-4 h-4" />
                 Redesigning urban experience
               </div>
               
-              <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-6xl md:text-7xl bg-gradient-to-br from-white to-neutral-300 bg-clip-text text-transparent">
+              <h1 className="text-5xl font-semibold tracking-tight text-white sm:text-6xl md:text-7xl bg-gradient-to-br from-white to-neutral-300 bg-clip-text text-transparent animate-fade-in">
                 The Operating System <br/>for Human-Centered Cities
               </h1>
               
-              <p className="mt-6 text-lg leading-8 text-neutral-300 max-w-2xl mx-auto">
+              <p className="mt-6 text-lg leading-8 text-neutral-300 max-w-2xl mx-auto animate-fade-in">
                 HappyBlock translates urban planning into measurable outcomes. We create neighborhoods that thrive on happiness, access, and real-life experience.
               </p>
               
-              <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+              <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4 animate-fade-in">
                 <Button variant="primary" size="xl">
                   Get Started
                 </Button>

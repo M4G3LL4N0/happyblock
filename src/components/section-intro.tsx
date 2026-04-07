@@ -22,19 +22,19 @@ export function SectionIntro({
       )}
     >
       {eyebrow ? (
-        <p className="text-xs uppercase tracking-[0.32em] text-neutral-500">
+        <p className="text-xs uppercase tracking-[0.32em] text-neutral-500 mb-6">
           {eyebrow}
         </p>
       ) : null}
 
       {title ? (
-        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+        <h2 className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl bg-gradient-to-br from-white to-neutral-300 bg-clip-text text-transparent">
           {title}
         </h2>
       ) : null}
 
       {description ? (
-        <p className="mt-4 text-base leading-7 text-neutral-400 sm:text-lg">
+        <p className="mt-6 text-lg leading-8 text-neutral-300 sm:text-xl">
           {description}
         </p>
       ) : null}
