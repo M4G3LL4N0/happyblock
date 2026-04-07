@@ -13,7 +13,7 @@ export function ScoreBar({
       </div>
       <div className="h-2 rounded-full bg-zinc-800">
         <div
-          className="h-2 rounded-full bg-gradient-to-r from-green-400 to-emerald-500"
+          className="h-2 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-600"
           style={{ width: `${value}%` }}
         />
       </div>

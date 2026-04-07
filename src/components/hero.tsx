@@ -6,14 +6,14 @@ export function Hero() {
   return (
     <section className="relative pt-32 pb-40 sm:pt-48 sm:pb-56 isolate overflow-hidden">
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/25 from-0% via-neutral-950/85 via-30% to-neutral-950 to-90%" />
-        <div className="absolute inset-0 bg-[url('/public/window.svg')] bg-[size:1200px] bg-center opacity-[0.08]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/25 via-neutral-950/95 to-neutral-950" />
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-4xl h-[400px] bg-blue-800/25 blur-[140px]" />
-        <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-blue-700/20 blur-[140px]" />
-        <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-blue-700/20 blur-[140px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,_rgba(56,_189,_248,_0.15)_0%,_rgba(56,_189,_248,_0)_40%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 from-0% via-transparent via-50% to-transparent to-100% animate-pulse-slow" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/30 from-0% via-violet-900/80 via-30% to-fuchsia-950/90" />
+        <div className="absolute inset-0 bg-[url('/public/window.svg')] bg-[size:1200px] bg-center opacity-[0.1]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/30 via-violet-900/95 to-fuchsia-950" />
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-full max-w-4xl h-[400px] bg-indigo-700/30 blur-[140px]" />
+        <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-fuchsia-600/25 blur-[140px]" />
+        <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-violet-600/25 blur-[140px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,_rgba(192,132,252,0.2)_0%,_rgba(192,132,252,0)_40%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/15 from-0% via-transparent via-50% to-transparent to-100% animate-pulse-slow" />
       </div>
 
       <div className="px-6 mx-auto max-w-7xl">
