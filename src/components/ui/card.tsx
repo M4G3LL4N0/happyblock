@@ -34,6 +34,9 @@ export function Card({
   children,
   className,
   variant = "default",
+  innerClassName,
+  glowPosition = "center",
+  ...props
 }: CardProps) {
   return (
     <div
@@ -51,6 +54,14 @@ export function Card({
         <>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/30 to-transparent" />
           <div className="absolute inset-0 bg-[linear-gradient(120deg,_rgba(56,189,248,0.15)_0%,_rgba(56,189,248,0)_50%)]" />
+          <div 
+            className={cn(
+              "absolute -z-10 w-full h-48 blur-[100px] rounded-full bg-blue-600/40",
+              glowPosition === "top" && "top-0 left-0",
+              glowPosition === "center" && "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+              glowPosition === "bottom" && "bottom-0 right-0"
+            )}
+          />
         </>
       )}
     </div>

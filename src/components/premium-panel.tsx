@@ -5,6 +5,7 @@ interface PremiumPanelProps {
   children: ReactNode;
   className?: string;
   glowPosition?: "top" | "center" | "bottom";
+  innerClassName?: string;
 }
   return (
     <div
@@ -21,7 +22,10 @@ interface PremiumPanelProps {
       <div className="absolute inset-0 -z-20 bg-[linear-gradient(120deg,_rgba(56,189,248,0.2)_0%,_rgba(56,189,248,0)_50%)]" />
       <div className="absolute inset-0 -z-30 bg-[url('/public/window.svg')] bg-[size:1200px] bg-center opacity-[0.03]" />
       
-      <div className="relative h-full w-full rounded-[40px] bg-gradient-to-b from-blue-950/20 to-black/90 backdrop-blur-[80px]">
+      <div className={cn(
+        "relative h-full w-full rounded-[40px] bg-gradient-to-b from-blue-950/20 to-black/90 backdrop-blur-[80px]",
+        innerClassName
+      )}>
         {children}
         <div 
           className={cn(

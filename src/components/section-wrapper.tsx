@@ -26,7 +26,7 @@ export function SectionWrapper({
   variant = "default",
 }: SectionWrapperProps) {
   const variants = {
-    default: [
+    default: clsx(
       "relative py-24 md:py-32 lg:py-40",
       "before:absolute before:inset-0 before:-z-10",
       "before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]",

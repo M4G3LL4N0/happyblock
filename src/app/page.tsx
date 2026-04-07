@@ -39,16 +39,17 @@ export default function Home() {
         </PremiumPanel>
       </SectionWrapper>
 
-      <SectionWrapper>
-        <div className="space-y-12">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">Core Product Modules</h2>
-            <p className="text-neutral-400 text-lg">
-              The building blocks of our spatial intelligence platform
-            </p>
+      <SectionWrapper variant="subtle">
+        <PremiumPanel className="p-10 sm:p-14" glowPosition="top">
+          <div className="space-y-16">
+            <SectionIntro
+              title="Core Product Modules"
+              description="The building blocks of our spatial intelligence platform"
+              centered
+            />
+            <ProductModules />
           </div>
-          <ProductModules />
-        </div>
+        </PremiumPanel>
       </SectionWrapper>
 
       <SectionWrapper className="bg-neutral-950/50">

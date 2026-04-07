@@ -48,7 +48,7 @@ export function Button({
       {isLoading ? (
         <span className="inline-flex items-center gap-2">
           <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-          <span className="opacity-80">{props.children}</span>
+          <span className="opacity-80">{loadingText || props.children}</span>
         </span>
       ) : (
         <span className="relative z-10">{props.children}</span>
