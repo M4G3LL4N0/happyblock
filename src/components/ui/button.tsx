@@ -48,10 +48,14 @@ export function Button({
       {isLoading ? (
         <span className="inline-flex items-center gap-2">
           <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-          <span className="opacity-80">{loadingText || props.children}</span>
+          <span className="opacity-80 transition-opacity">
+            {loadingText || props.children}
+          </span>
         </span>
       ) : (
-        <span className="relative z-10">{props.children}</span>
+        <span className="relative z-10 transition-transform group-hover:translate-y-[-1px]">
+          {props.children}
+        </span>
       )}
       {variant === 'premium' && !isLoading && (
         <span className="absolute inset-0 rounded-xl bg-[linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_50%)]" />

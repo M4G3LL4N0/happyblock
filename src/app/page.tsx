@@ -26,8 +26,8 @@ export default function Home() {
         </PremiumPanel>
       </SectionWrapper>
 
-      <SectionWrapper variant="highlight">
-        <PremiumPanel className="p-10 sm:p-14" glowPosition="center">
+      <SectionWrapper variant="highlight" className="group">
+        <PremiumPanel className="p-10 sm:p-14 group-hover:glowPosition='center'" glowPosition="center">
           <div className="space-y-16">
             <SectionIntro
               title="How It Works"

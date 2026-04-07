@@ -41,11 +41,12 @@ export function Card({
   return (
     <div
       className={clsx(
-        "relative overflow-hidden rounded-2xl border backdrop-blur-sm transition-all duration-300",
-        "hover:shadow-lg",
+        "relative overflow-hidden rounded-2xl border backdrop-blur-sm transition-all duration-300 group",
+        "hover:shadow-lg hover:border-white/20",
         variantClasses[variant],
         className
       )}
+      {...props}
     >
       <div className={clsx("relative z-10", innerClassName)}>
         {children}
