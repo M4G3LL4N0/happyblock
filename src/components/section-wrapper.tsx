@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import clsx from "clsx";
+import { SectionIntro } from "@/components/section-intro";
 
 export function SectionWrapper({
   children,
@@ -7,37 +8,53 @@ export function SectionWrapper({
   eyebrow,
   title,
   description,
+  introClassName,
+  innerClassName,
+  container = true,
 }: {
   children: ReactNode;
   className?: string;
   eyebrow?: string;
   title?: string;
   description?: string;
+  introClassName?: string;
+  innerClassName?: string;
+  container?: boolean;
 }) {
   return (
-    <section className={clsx("py-32 sm:py-40", className)}>
-      <div className="mx-auto max-w-7xl px-6">
-        {(eyebrow || title || description) && (
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            {eyebrow && (
-              <p className="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-4">
-                {eyebrow}
-              </p>
-            )}
-            {title && (
-              <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                {title}
-              </h2>
-            )}
-            {description && (
-              <p className="mt-6 text-lg leading-8 text-neutral-400 max-w-2xl mx-auto">
-                {description}
-              </p>
-            )}
-          </div>
-        )}
-        {children}
-      </div>
+    <section 
+      className={clsx(
+        "relative py-24 sm:py-32",
+        className
+      )}
+    >
+      {container ? (
+        <div className={clsx("mx-auto max-w-7xl px-6", innerClassName)}>
+          {(eyebrow || title || description) && (
+            <SectionIntro
+              eyebrow={eyebrow}
+              title={title}
+              description={description}
+              className={introClassName}
+            />
+          )}
+          {children}
+        </div>
+      ) : (
+        <>
+          {(eyebrow || title || description) && (
+            <div className="mx-auto max-w-7xl px-6">
+              <SectionIntro
+                eyebrow={eyebrow}
+                title={title}
+                description={description}
+                className={introClassName}
+              />
+            </div>
+          )}
+          {children}
+        </>
+      )}
     </section>
   );
 }
