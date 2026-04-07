@@ -27,7 +27,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased bg-neutral-950`}
     >
-      <body className="min-h-full flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-950 via-neutral-900 to-black text-neutral-100">
+      <body className="min-h-full flex flex-col bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-950 via-neutral-900 to-black text-neutral-100 animate-fade-in">
         <div className="flex flex-col flex-1">
           {children}
         </div>
