@@ -6,10 +6,15 @@ import React from "react";
 import { SiteHeader } from "@/components/site-header";
 import { Sidebar } from "@/components/sidebar";
 
-interface ScoreBarProps {
-  label: string;
-  value: number;
-  max: number;
+interface ScenarioMetrics {
+  happy_score: number;
+  access_score: number;
+  walkability: number;
+  social_density: number;
+  green_score?: number;
+  time_efficiency?: number;
+  safety?: number;
+  economic_score?: number;
 }
 
 export default async function ScenarioPage({
@@ -21,7 +26,7 @@ export default async function ScenarioPage({
     .from("scenarios")
     .select("*")
     .eq("id", params.id)
-    .single<Scenario>();
+    .single<Scenario & { metrics: ScenarioMetrics }>();
 
   if (error || !scenario) {
     console.error("Error fetching scenario:", error);
@@ -34,13 +39,13 @@ export default async function ScenarioPage({
       <div className="flex flex-col flex-1">
         <SiteHeader />
         <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
-      <div className="grid grid-cols-1 gap-8">
+      <div className="grid grid-cols-1 gap-8 max-w-7xl mx-auto w-full px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-secondary p-6 rounded-lg">
+          <div className="bg-neutral-900 p-6 rounded-lg border border-neutral-800">
             <h3 className="text-sm font-medium text-secondary-foreground">HappyScore</h3>
             <p className="text-2xl font-bold mt-2">{scenario.metrics.happy_score}%</p>
           </div>
-          <div className="bg-secondary p-6 rounded-lg">
+          <div className="bg-neutral-900 p-6 rounded-lg border border-neutral-800">
             <h3 className="text-sm font-medium text-secondary-foreground">Access Score</h3>
             <p className="text-2xl font-bold mt-2">{scenario.metrics.access_score}%</p>
           </div>
