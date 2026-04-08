@@ -1,12 +1,10 @@
 import { supabase } from "@/lib/supabase";
-import { Scenario } from "@/lib/types";
+import type { Scenario as ScenarioType } from "@/lib/types";
 import { ScoreBar } from "@/components/score-bar";
 import { notFound } from "next/navigation";
 import React from "react";
 import { SiteHeader } from "@/components/site-header";
 import { Sidebar } from "@/components/sidebar";
-
-import type { Scenario } from "@/lib/types";
 
 export default async function ScenarioPage({
   params,
@@ -17,7 +15,7 @@ export default async function ScenarioPage({
     .from("scenarios")
     .select("*")
     .eq("id", params.id)
-    .single<Scenario>();
+    .single<ScenarioType>();
 
   if (error || !scenario) {
     console.error("Error fetching scenario:", error);
