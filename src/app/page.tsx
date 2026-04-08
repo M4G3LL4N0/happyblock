@@ -1,3 +1,4 @@
+import { SectionIntro } from "@/components/section-intro";
 import { Hero } from "@/components/hero";
 import { SectionWrapper } from "@/components/section-wrapper";
 import { ProductPreview } from "@/components/product-preview";

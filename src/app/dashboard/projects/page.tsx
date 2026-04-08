@@ -56,7 +56,7 @@ export default function ProjectsPage() {
             <Link
               key={project.id}
               href={`/dashboard/projects/${project.id}`}
-              className="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6 transition hover:border-neutral-700 hover:bg-neutral-900"
+              className="rounded-2xl border border-neutral-800 bg-neutral-900/70 p-6 transition hover:border-neutral-700 hover:bg-neutral-900 hover:shadow-lg"
             >
               <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div>

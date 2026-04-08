@@ -1,39 +1,33 @@
-import { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import clsx from "clsx";
 
-type ButtonVariant = "default" | "secondary" | "ghost" | "premium" | "link";
-type ButtonSize = "sm" | "md" | "lg" | "xl" | "icon";
+type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonSize = "sm" | "md" | "lg" | "xl";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  children: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
-  isLoading?: boolean;
-  loadingText?: string;
-}
+};
 
 const variantClasses: Record<ButtonVariant, string> = {
-  default: "bg-white text-black hover:bg-neutral-100 shadow-[0_0_20px_-5px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.5)] transition-all duration-300",
-  secondary: "bg-neutral-900 text-white border border-neutral-700 hover:bg-neutral-800 hover:border-neutral-600 transition-all duration-300",
+  primary:
+    "bg-white text-slate-950 hover:bg-slate-100 shadow-[0_10px_30px_rgba(255,255,255,0.12)]",
+  secondary:
+    "border border-white/15 bg-white/8 text-white hover:bg-white/12 backdrop-blur-md",
   ghost:
-    "bg-transparent text-white border border-white/10 hover:bg-white/5 hover:border-white/20 transition-all duration-300",
-  premium: [
-    "bg-gradient-to-br from-blue-600 to-cyan-500 text-white",
-    "border border-blue-400/30 hover:border-blue-400/50",
-    "shadow-[0_0_20px_-10px_rgba(56,189,248,0.4)] hover:shadow-[0_0_30px_-10px_rgba(56,189,248,0.6)]",
-    "transition-all duration-300 ease-[cubic-bezier(0.65,0,0.35,1)]",
-    "hover:from-blue-600/90 hover:to-cyan-500/90",
-    "active:scale-95"
-  ].join(" "),
+    "border border-transparent bg-transparent text-white/85 hover:bg-white/8 hover:text-white",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: "h-9 px-3 text-sm",
-  md: "h-10 px-4 text-sm",
-  lg: "h-11 px-5 text-base",
-  xl: "h-12 px-6 text-base sm:h-14 sm:px-8 sm:text-lg",
+  sm: "h-9 px-3 text-sm rounded-lg",
+  md: "h-10 px-4 text-sm rounded-xl",
+  lg: "h-11 px-5 text-base rounded-xl",
+  xl: "h-12 px-6 text-base rounded-2xl sm:h-14 sm:px-8 sm:text-lg",
 };
 
 export function Button({
+  children,
   className,
   variant = "primary",
   size = "md",
@@ -44,28 +38,14 @@ export function Button({
     <button
       type={type}
       className={clsx(
-        "inline-flex items-center justify-center rounded-xl font-medium transition",
+        "inline-flex items-center justify-center font-medium transition duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-300/40 focus:ring-offset-0 disabled:pointer-events-none disabled:opacity-50",
         variantClasses[variant],
         sizeClasses[size],
         className
       )}
       {...props}
     >
-      {isLoading ? (
-        <span className="inline-flex items-center gap-2">
-          <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-          <span className="opacity-80 transition-opacity duration-300">
-            {loadingText || props.children}
-          </span>
-        </span>
-      ) : (
-        <span className="relative z-10 transition-transform duration-300 group-hover:translate-y-[-1px] hover:scale-105">
-          {props.children}
-        </span>
-      )}
-      {variant === 'premium' && !isLoading && (
-        <span className="absolute inset-0 rounded-xl bg-[linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_50%)]" />
-      )}
+      {children}
     </button>
   );
 }

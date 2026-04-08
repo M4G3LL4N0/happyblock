@@ -1,44 +1,57 @@
-import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
+import clsx from "clsx";
 
-interface PremiumPanelProps {
+type GlowPosition = "top" | "center" | "bottom";
+
+type PremiumPanelProps = {
   children: ReactNode;
   className?: string;
-  glowPosition?: "top" | "center" | "bottom";
   innerClassName?: string;
+  glowPosition?: GlowPosition;
+};
+
+function cn(...classes: Array<string | false | null | undefined>) {
+  return clsx(classes);
 }
+
+export function PremiumPanel({
+  children,
+  className,
+  innerClassName,
+  glowPosition = "center",
+}: PremiumPanelProps) {
   return (
     <div
       className={cn(
-        "relative isolate overflow-hidden rounded-[40px] p-px",
-        "bg-gradient-to-br from-blue-500/20 via-blue-600/10 to-blue-800/5",
-        "shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_0_40px_-10px_rgba(45,212,191,0.1)]",
-        "hover:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_0_60px_-15px_rgba(45,212,191,0.2)]",
+        "group relative isolate overflow-hidden rounded-[40px] p-px",
+        "bg-gradient-to-br from-blue-500/20 via-cyan-400/10 to-violet-500/20",
+        "shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_20px_80px_rgba(0,0,0,0.45)]",
         "transition-all duration-500",
         className
       )}
     >
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/30 via-blue-950/40 to-blue-950/60" />
-      <div className="absolute inset-0 -z-20 bg-[linear-gradient(120deg,_rgba(56,189,248,0.2)_0%,_rgba(56,189,248,0)_50%)]" />
-      <div className="absolute inset-0 -z-30 bg-[url('/public/window.svg')] bg-[size:1200px] bg-center opacity-[0.03]" />
-      
-      <div className={cn(
-        "relative h-full w-full rounded-[40px] bg-gradient-to-b from-blue-950/30 via-blue-950/25 to-black/95 opacity-[0.99]",
-        "backdrop-blur-[80px] transition-all duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]",
-        "group-hover:from-blue-950/40 group-hover:to-black/90 group-hover:shadow-[0_0_60px_-15px_rgba(56,189,248,0.4)]",
-        "before:absolute before:inset-0 before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))]",
-        "before:from-blue-900/30 before:via-blue-950/40 before:to-blue-950/60 before:opacity-60",
-        "before:transition-all before:duration-700",
-        "group-hover:before:opacity-80 group-hover:before:blur-[1px]",
-        innerClassName
-      )}>
+      <div className="absolute inset-0 -z-30 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.16),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01))]" />
+
+      <div
+        className={cn(
+          "relative h-full w-full overflow-hidden rounded-[40px]",
+          "bg-[linear-gradient(180deg,rgba(5,10,20,0.92),rgba(3,7,18,0.96))]",
+          "backdrop-blur-xl",
+          innerClassName
+        )}
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.12),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(34,211,238,0.08),transparent_30%)] pointer-events-none" />
+
         {children}
-        <div 
+
+        <div
           className={cn(
-            "absolute -z-10 w-full h-48 blur-[100px] rounded-full bg-blue-600/40",
-            glowPosition === "top" && "top-0 left-0",
-            glowPosition === "center" && "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-            glowPosition === "bottom" && "bottom-0 right-0"
+            "pointer-events-none absolute -z-10 h-48 w-48 rounded-full blur-[110px]",
+            "bg-gradient-to-br from-cyan-400/20 via-blue-500/18 to-violet-500/20",
+            glowPosition === "top" && "-top-8 left-8",
+            glowPosition === "center" &&
+              "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
+            glowPosition === "bottom" && "-bottom-8 right-8"
           )}
         />
       </div>
