@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+/* Geist Mono font */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/fonts/geist-mono.woff2) format('woff2');
+}
+
+/* Geist font */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/fonts/geist.woff2) format('woff2');
+}
+
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
@@ -22,8 +40,8 @@
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-error: var(--error);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Geist', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
 }
 
 body {
