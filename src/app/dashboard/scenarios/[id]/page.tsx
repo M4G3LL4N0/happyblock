@@ -1,26 +1,33 @@
-import { DashboardLayout } from "@/components/dashboard-layout";
 import { supabase } from "@/lib/supabase";
-import { Scenario } from "@/lib/types";
+import { Scenario, ScenarioMetrics } from "@/lib/types";
 import { ScoreBar } from "@/components/score-bar";
-import { RecommendationPanel } from "@/components/recommendation-panel";
+import { notFound } from "next/navigation";
+import React from "react";
+import { SiteHeader } from "@/components/site-header";
+import { Sidebar } from "@/components/sidebar";
 
 export default async function ScenarioPage({
   params,
 }: {
   params: { id: string };
 }) {
-  const { data: scenario } = await supabase
+  const { data: scenario, error } = await supabase
     .from("scenarios")
     .select("*")
     .eq("id", params.id)
-    .single();
+    .single<Scenario>();
 
-  if (!scenario) {
-    return <div>Scenario not found</div>;
+  if (error || !scenario) {
+    console.error("Error fetching scenario:", error);
+    return notFound();
   }
 
   return (
-    <DashboardLayout>
+    <div className="flex min-h-screen w-full">
+      <Sidebar />
+      <div className="flex flex-col flex-1">
+        <SiteHeader />
+        <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
       <div className="grid grid-cols-1 gap-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-secondary p-6 rounded-lg">
@@ -41,20 +48,33 @@ export default async function ScenarioPage({
           <div className="space-y-6">
             <h2 className="text-xl font-semibold">Detailed Metrics</h2>
             <div className="space-y-4">
-              <ScoreBar label="Happy Score" value={scenario.metrics.happy_score} />
-              <ScoreBar label="Access Score" value={scenario.metrics.access_score} />
-              <ScoreBar label="Walkability" value={scenario.metrics.walkability} />
-              <ScoreBar label="Social Density" value={scenario.metrics.social_density} />
-              <ScoreBar label="Green Score" value={scenario.metrics.green_score} />
-              <ScoreBar label="Time Efficiency" value={scenario.metrics.time_efficiency} />
-              <ScoreBar label="Safety" value={scenario.metrics.safety} />
-              <ScoreBar label="Economic Score" value={scenario.metrics.economic_score} />
+              <ScoreBar label="Happy Score" value={scenario.metrics?.happy_score ?? 0} max={100} />
+              <ScoreBar label="Access Score" value={scenario.metrics?.access_score ?? 0} max={100} />
+              <ScoreBar label="Walkability" value={scenario.metrics?.walkability ?? 0} max={100} />
+              <ScoreBar label="Social Density" value={scenario.metrics?.social_density ?? 0} max={100} />
+              {scenario.metrics?.green_score !== undefined && (
+                <ScoreBar label="Green Score" value={scenario.metrics.green_score} max={100} />
+              )}
+              {scenario.metrics?.time_efficiency !== undefined && (
+                <ScoreBar label="Time Efficiency" value={scenario.metrics.time_efficiency} max={100} />
+              )}
+              {scenario.metrics?.safety !== undefined && (
+                <ScoreBar label="Safety" value={scenario.metrics.safety} max={100} />
+              )}
+              {scenario.metrics?.economic_score !== undefined && (
+                <ScoreBar label="Economic Score" value={scenario.metrics.economic_score} max={100} />
+              )}
             </div>
           </div>
 
-          <RecommendationPanel scenario={scenario} />
+          <div className="bg-secondary p-6 rounded-lg">
+            <h2 className="text-xl font-semibold mb-4">Recommendations</h2>
+            <p className="text-secondary-foreground">Coming soon</p>
+          </div>
         </div>
       </div>
-    </DashboardLayout>
+        </main>
+      </div>
+    </div>
   );
 }
