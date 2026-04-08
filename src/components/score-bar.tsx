@@ -1,9 +1,11 @@
 export function ScoreBar({
   label,
   value,
+  max = 100,
 }: {
   label: string;
   value: number;
+  max?: number;
 }) {
   return (
     <div className="space-y-1">
@@ -14,7 +16,7 @@ export function ScoreBar({
       <div className="h-2 rounded-full bg-zinc-800">
         <div
           className="h-2 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-600"
-          style={{ width: `${value}%` }}
+          style={{ width: `${(value / max) * 100}%` }}
         />
       </div>
     </div>
