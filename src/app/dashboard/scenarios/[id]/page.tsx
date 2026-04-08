@@ -1,10 +1,16 @@
 import { supabase } from "@/lib/supabase";
-import { Scenario, ScenarioMetrics } from "@/lib/types";
+import { Scenario } from "@/lib/types";
 import { ScoreBar } from "@/components/score-bar";
 import { notFound } from "next/navigation";
 import React from "react";
 import { SiteHeader } from "@/components/site-header";
 import { Sidebar } from "@/components/sidebar";
+
+interface ScoreBarProps {
+  label: string;
+  value: number;
+  max: number;
+}
 
 export default async function ScenarioPage({
   params,
@@ -48,21 +54,25 @@ export default async function ScenarioPage({
           <div className="space-y-6">
             <h2 className="text-xl font-semibold">Detailed Metrics</h2>
             <div className="space-y-4">
-              <ScoreBar label="Happy Score" value={scenario.metrics?.happy_score ?? 0} max={100} />
-              <ScoreBar label="Access Score" value={scenario.metrics?.access_score ?? 0} max={100} />
-              <ScoreBar label="Walkability" value={scenario.metrics?.walkability ?? 0} max={100} />
-              <ScoreBar label="Social Density" value={scenario.metrics?.social_density ?? 0} max={100} />
-              {scenario.metrics?.green_score !== undefined && (
-                <ScoreBar label="Green Score" value={scenario.metrics.green_score} max={100} />
-              )}
-              {scenario.metrics?.time_efficiency !== undefined && (
-                <ScoreBar label="Time Efficiency" value={scenario.metrics.time_efficiency} max={100} />
-              )}
-              {scenario.metrics?.safety !== undefined && (
-                <ScoreBar label="Safety" value={scenario.metrics.safety} max={100} />
-              )}
-              {scenario.metrics?.economic_score !== undefined && (
-                <ScoreBar label="Economic Score" value={scenario.metrics.economic_score} max={100} />
+              {scenario.metrics && (
+                <>
+                  <ScoreBar label="Happy Score" value={scenario.metrics.happy_score} max={100} />
+                  <ScoreBar label="Access Score" value={scenario.metrics.access_score} max={100} />
+                  <ScoreBar label="Walkability" value={scenario.metrics.walkability} max={100} />
+                  <ScoreBar label="Social Density" value={scenario.metrics.social_density} max={100} />
+                  {'green_score' in scenario.metrics && (
+                    <ScoreBar label="Green Score" value={scenario.metrics.green_score} max={100} />
+                  )}
+                  {'time_efficiency' in scenario.metrics && (
+                    <ScoreBar label="Time Efficiency" value={scenario.metrics.time_efficiency} max={100} />
+                  )}
+                  {'safety' in scenario.metrics && (
+                    <ScoreBar label="Safety" value={scenario.metrics.safety} max={100} />
+                  )}
+                  {'economic_score' in scenario.metrics && (
+                    <ScoreBar label="Economic Score" value={scenario.metrics.economic_score} max={100} />
+                  )}
+                </>
               )}
             </div>
           </div>
