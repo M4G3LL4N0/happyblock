@@ -6,16 +6,7 @@ import React from "react";
 import { SiteHeader } from "@/components/site-header";
 import { Sidebar } from "@/components/sidebar";
 
-interface ScenarioMetrics {
-  happy_score: number;
-  access_score: number;
-  walkability: number;
-  social_density: number;
-  green_score?: number;
-  time_efficiency?: number;
-  safety?: number;
-  economic_score?: number;
-}
+import type { Scenario } from "@/lib/types";
 
 export default async function ScenarioPage({
   params,
@@ -26,7 +17,7 @@ export default async function ScenarioPage({
     .from("scenarios")
     .select("*")
     .eq("id", params.id)
-    .single<Scenario & { metrics: ScenarioMetrics }>();
+    .single<Scenario>();
 
   if (error || !scenario) {
     console.error("Error fetching scenario:", error);
@@ -65,16 +56,16 @@ export default async function ScenarioPage({
                   <ScoreBar label="Access Score" value={scenario.metrics.access_score} max={100} />
                   <ScoreBar label="Walkability" value={scenario.metrics.walkability} max={100} />
                   <ScoreBar label="Social Density" value={scenario.metrics.social_density} max={100} />
-                  {'green_score' in scenario.metrics && (
+                  {scenario.metrics.green_score && (
                     <ScoreBar label="Green Score" value={scenario.metrics.green_score} max={100} />
                   )}
-                  {'time_efficiency' in scenario.metrics && (
+                  {scenario.metrics.time_efficiency && (
                     <ScoreBar label="Time Efficiency" value={scenario.metrics.time_efficiency} max={100} />
                   )}
-                  {'safety' in scenario.metrics && (
+                  {scenario.metrics.safety && (
                     <ScoreBar label="Safety" value={scenario.metrics.safety} max={100} />
                   )}
-                  {'economic_score' in scenario.metrics && (
+                  {scenario.metrics.economic_score && (
                     <ScoreBar label="Economic Score" value={scenario.metrics.economic_score} max={100} />
                   )}
                 </>
