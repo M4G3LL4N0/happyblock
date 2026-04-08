@@ -23,6 +23,10 @@ export interface Scenario {
     access_score: number;
     walkability: number;
     social_density: number;
+    green_score?: number;
+    time_efficiency?: number;
+    safety?: number;
+    economic_score?: number;
     green_score: number;
     time_efficiency: number;
     safety: number;
